@@ -38,5 +38,20 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 // x = 10;
 
 var isPalindrome = function (x) {
+  if (x < 0) {
+    return false;
+  }
 
+  let xString = x.toString();
+  let xIndex = xString.length;
+  let y = "";
+  while (xIndex > 0) {
+    y += xString[xIndex - 1];
+    xIndex--;
+  }
+
+  let yNum = parseInt(y);
+  return x === yNum ? true : false;
 };
+
+console.log(isPalindrome(x));
